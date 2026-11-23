@@ -5,25 +5,28 @@ import { AppProvider } from './context/AppContext';
 import { SpatialOrnament } from './components/SpatialOrnament';
 import SpatialParticles from './components/SpatialParticles';
 
-// Pages
-import SplashScreen from './pages/SplashScreen';
-import OnboardingScreen from './pages/OnboardingScreen';
-import LandingPage from './pages/LandingPage';
-import HomePage from './pages/HomePage';
-import DownloadsVaultPage from './pages/DownloadsVaultPage';
-import PlatformsPage from './pages/PlatformsPage';
-import HistoryPage from './pages/HistoryPage';
-import PreferencesPage from './pages/PreferencesPage';
-import SettingsPage from './pages/SettingsPage';
-import ProfilePage from './pages/ProfilePage';
-import { TermsPage, PrivacyPage } from './pages/LegalPages';
+// Structured Feature Pages
+import SplashScreen from './pages/onboarding/SplashScreen';
+import OnboardingScreen from './pages/onboarding/OnboardingScreen';
+import LandingPage from './pages/onboarding/LandingPage';
+import HomePage from './pages/downloader/HomePage';
+import HistoryPage from './pages/downloader/HistoryPage';
+import DownloadsVaultPage from './pages/vault/DownloadsVaultPage';
+import PlatformsPage from './pages/platforms/PlatformsPage';
+import PreferencesPage from './pages/system/PreferencesPage';
+import SettingsPage from './pages/system/SettingsPage';
+import ProfilePage from './pages/system/ProfilePage';
+import { TermsPage, PrivacyPage } from './pages/legal/LegalPages';
 
 function AppLayout() {
   const location = useLocation();
   const hideOrnament = location.pathname === '/' || location.pathname === '/onboarding' || location.pathname === '/welcome';
 
   return (
-    <div className="relative min-h-screen selection:bg-[var(--text-primary)] selection:text-[var(--bg-spatial)] flex flex-col justify-center items-center py-8">
+    <div className="relative min-h-screen bg-[#121518] selection:bg-[var(--text-primary)] selection:text-[var(--bg-spatial)] flex flex-col justify-center items-center py-8">
+      {/* Fixed Ambient Spatial Background Canvas Layer */}
+      <div className="spatial-backdrop-layer" />
+
       {/* Dynamic Ambient Spatial Particle Layer with Left-Dark & Right-Bright Duality */}
       <SpatialParticles />
 

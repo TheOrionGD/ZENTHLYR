@@ -9,8 +9,8 @@ import {
   Check, 
   Layers 
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
-import { useApp } from '../context/AppContext';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
+import { useApp } from '../../context/AppContext';
 
 export default function HistoryPage() {
   const { history, removeFromHistory, clearHistory, setCurrentMedia } = useApp();

@@ -8,8 +8,8 @@ import {
   Sparkles,
   ShieldAlert 
 } from 'lucide-react';
-import { SpatialWindow } from '../components/SpatialUI';
-import { useApp } from '../context/AppContext';
+import { SpatialWindow } from '../../components/SpatialUI';
+import { useApp } from '../../context/AppContext';
 
 export default function PreferencesPage() {
   const { preferences, updatePreferences } = useApp();

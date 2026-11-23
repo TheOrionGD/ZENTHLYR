@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
 
 export default function SplashScreen() {
   const navigate = useNavigate();

@@ -10,7 +10,7 @@ import {
   ExternalLink,
   CheckCircle2
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
 
 const PLATFORM_CATALOG = [
   {

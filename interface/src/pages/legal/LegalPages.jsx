@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Shield } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
 
 export function TermsPage() {
   const navigate = useNavigate();

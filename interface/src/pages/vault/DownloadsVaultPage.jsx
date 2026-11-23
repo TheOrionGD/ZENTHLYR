@@ -8,9 +8,9 @@ import {
   RefreshCw, 
   Eye
 } from 'lucide-react';
-import { SpatialWindow } from '../components/SpatialUI';
-import SmoothButton from '../components/SmoothButton';
-import { SmoothTabs, SmoothBadge } from '../components/SmoothUIPrimitives';
+import { SpatialWindow } from '../../components/SpatialUI';
+import SmoothButton from '../../components/SmoothButton';
+import { SmoothTabs, SmoothBadge } from '../../components/SmoothUIPrimitives';
 
 export default function DownloadsVaultPage() {
   const [assets, setAssets] = useState([]);
@@ -72,7 +72,7 @@ export default function DownloadsVaultPage() {
 
           <div className="flex items-center gap-2 self-end sm:self-auto">
             <span className="text-[11px] font-mono text-[var(--text-muted)]">
-              Path: <strong className="text-[var(--text-primary)]">P:\Downlayer\downloads</strong>
+              Path: <strong className="text-[var(--text-primary)]">P:\Downlayer\vault</strong>
             </span>
             <SmoothButton
               variant="ghost"

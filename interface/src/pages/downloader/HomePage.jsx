@@ -17,10 +17,10 @@ import {
   ExternalLink
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { SpatialWindow } from '../components/SpatialUI';
-import SmoothButton from '../components/SmoothButton';
-import { SmoothText, SmoothBadge, SmoothAlert } from '../components/SmoothUIPrimitives';
-import { useApp } from '../context/AppContext';
+import { SpatialWindow } from '../../components/SpatialUI';
+import SmoothButton from '../../components/SmoothButton';
+import { SmoothText, SmoothBadge, SmoothAlert } from '../../components/SmoothUIPrimitives';
+import { useApp } from '../../context/AppContext';
 
 export default function HomePage() {
   const [urlInput, setUrlInput] = useState('');

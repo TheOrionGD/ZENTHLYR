@@ -42,16 +42,16 @@ start.bat
 ```
 
 ### 2. Manual Start
-**Backend**:
+**Core Engine**:
 ```bash
-cd backend
+cd core
 python main.py
 ```
 *Runs on `http://127.0.0.1:8000`*
 
-**Frontend**:
+**Spatial Interface**:
 ```bash
-cd frontend
+cd interface
 npm run dev
 ```
 *Runs on `http://localhost:5173`*

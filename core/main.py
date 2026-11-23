@@ -18,7 +18,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-ROOT_DOWNLOADS_DIR = Path(__file__).resolve().parent.parent / "downloads"
+ROOT_DOWNLOADS_DIR = Path(__file__).resolve().parent.parent / "vault"
 ROOT_DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 FFMPEG_EXE = imageio_ffmpeg.get_ffmpeg_exe()
 

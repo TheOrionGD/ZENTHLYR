@@ -15,9 +15,9 @@ dist/
 build/
 *.egg-info/
 
-# Media Downloads (Large Media Cache)
-downloads/*
-!downloads/.gitkeep
+# Media Vault (Large Media Cache)
+vault/*
+!vault/.gitkeep
 
 # IDE & OS Files
 .DS_Store

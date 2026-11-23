@@ -8,8 +8,8 @@ import {
   Zap,
   FolderDown
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
-import { useApp } from '../context/AppContext';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
+import { useApp } from '../../context/AppContext';
 
 export default function ProfilePage() {
   const { history } = useApp();

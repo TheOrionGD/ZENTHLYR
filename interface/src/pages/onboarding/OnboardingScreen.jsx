@@ -10,7 +10,7 @@ import {
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
 
 const ONBOARDING_SLIDES = [
   {

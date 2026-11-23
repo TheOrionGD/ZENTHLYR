@@ -9,8 +9,8 @@ import {
   CheckCircle2,
   RefreshCw
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
-import { useApp } from '../context/AppContext';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
+import { useApp } from '../../context/AppContext';
 
 export default function SettingsPage() {
   const { theme, toggleTheme, clearHistory } = useApp();

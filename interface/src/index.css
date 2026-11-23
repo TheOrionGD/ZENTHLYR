@@ -43,13 +43,32 @@
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
-  background-color: var(--bg-spatial);
-  background-image: radial-gradient(circle at 50% 20%, rgba(206, 212, 218, 0.12) 0%, transparent 60%), url('/vision-environment.jpg');
+  background-color: #121518; /* Deep obsidian dark background base */
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: auto; /* Natural force scroll & overscroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fixed viewport backdrop layer - remains perfectly anchored during force scroll up/down */
+.spatial-backdrop-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(206, 212, 218, 0.08) 0%, transparent 65%),
+    url('/vision-environment.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
-  color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background-repeat: no-repeat;
+  /* Dark color underlay vignette ensures pulling/overscrolling reveals solid dark aesthetics */
+  box-shadow: inset 0 0 160px 40px rgba(18, 21, 24, 0.95);
 }
 
 /* Apple Vision Pro Spatial Glass Physics & Specular Lighting */

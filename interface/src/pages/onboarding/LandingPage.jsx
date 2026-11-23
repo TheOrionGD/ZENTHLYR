@@ -10,7 +10,7 @@ import {
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
-import { SpatialWindow, VisionButton } from '../components/SpatialUI';
+import { SpatialWindow, VisionButton } from '../../components/SpatialUI';
 
 export default function LandingPage() {
   const navigate = useNavigate();
