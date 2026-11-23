@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+
+# Production Builds
+dist/
+build/
+*.egg-info/
+
+# Media Downloads (Large Media Cache)
+downloads/*
+!downloads/.gitkeep
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite & Cache
+.vite/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
