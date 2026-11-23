@@ -43,7 +43,7 @@ export default function SplashScreen() {
             ZENTHLYR
           </h1>
           <p className="text-sm font-medium tracking-widest uppercase text-[var(--text-muted)] mb-8">
-            visionOS Universal Media Intelligence
+            Spatial UI Universal Media Intelligence
           </p>
 
           <div className="flex items-center gap-3">

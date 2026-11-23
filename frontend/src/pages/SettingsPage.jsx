@@ -28,7 +28,7 @@ export default function SettingsPage() {
     <div className="min-h-screen p-4 sm:p-8 flex flex-col items-center justify-start pb-32">
       <SpatialWindow
         title="System Settings"
-        subtitle="visionOS runtime diagnostics, theme palette, and local memory controls"
+        subtitle="Spatial UI runtime diagnostics, theme palette, and local memory controls"
       >
         <div className="space-y-6">
           {/* Light Steel Color Palette Info Card */}
@@ -135,7 +135,7 @@ export default function SettingsPage() {
           {/* Version Pill */}
           <div className="text-center pt-2">
             <span className="text-[11px] font-mono text-[var(--text-muted)]">
-              ZENTHLYR &bull; Build 2.0.4-spatial &bull; visionOS Spec
+              ZENTHLYR &bull; Build 2.0.4-spatial &bull; Spatial UI Spec
             </span>
           </div>
         </div>

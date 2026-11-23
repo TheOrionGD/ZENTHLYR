@@ -1,6 +1,6 @@
 @echo off
 echo ========================================================
-echo Launching ZENTHLYR Spatial Computing System (visionOS)
+echo Launching ZENTHLYR Spatial Computing System
 echo ========================================================
 
 echo [1/2] Starting ZENTHLYR Backend Core (FastAPI Python)...

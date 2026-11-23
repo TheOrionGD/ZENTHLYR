@@ -21,7 +21,7 @@ export default function LandingPage() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full vision-card border border-[var(--border-glass)] mb-6 text-xs font-mono text-[var(--text-muted)]">
             <Sparkles className="w-3.5 h-3.5 text-[var(--text-primary)]" />
-            <span>visionOS Spatial Media Architecture</span>
+            <span>Spatial Media Architecture</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-[var(--text-primary)] leading-tight mb-4">

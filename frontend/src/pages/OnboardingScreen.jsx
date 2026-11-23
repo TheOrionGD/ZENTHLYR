@@ -34,7 +34,7 @@ const ONBOARDING_SLIDES = [
   {
     icon: Layers,
     title: "Universal Platform Core",
-    subtitle: "Over 1,800 supported media sites unified into one seamless visionOS spatial experience.",
+    subtitle: "Over 1,800 supported media sites unified into one seamless spatial UI experience.",
     badge: "ALL PLATFORMS"
   }
 ];

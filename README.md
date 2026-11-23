@@ -1,11 +1,11 @@
-# ZENTHLYR (visionOS Spatial Universal Media Downloader)
+# ZENTHLYR (Spatial UI Universal Media Downloader)
 
-**ZENTHLYR** is an Apple Vision Pro (visionOS) inspired spatial media extraction system engineered with a multi-page React architecture and an ultra-fast Python extraction core.
+**ZENTHLYR** is a spatial UI media extraction system engineered with a multi-page React architecture and an ultra-fast Python extraction core.
 
 ---
 
 ## Visual Design & Architecture
-- **visionOS Spatial Paradigm**: No conventional web navbars, headers, or footers. The system floats on an ambient spatial environment with frosted glass panes (`backdrop-blur-3xl`), specular edge highlights, window grab-bar indicators, and a floating **Spatial Navigation Ornament** capsule.
+- **Spatial UI Paradigm**: No conventional web navbars, headers, or footers. The system floats on an ambient spatial environment with frosted glass panes (`backdrop-blur-3xl`), specular edge highlights, window grab-bar indicators, and a floating **Spatial Navigation Ornament** capsule.
 - **Exact Light Steel Color Palette**:
   - `Bright Snow` (`#f8f9fa`)
   - `Platinum` (`#e9ecef`)
@@ -20,7 +20,7 @@
 ---
 
 ## Multi-Page Spatial Routes
-1. **`/splash`** — visionOS spatial boot sequence and holographic particle calibration.
+1. **`/splash`** — Spatial boot sequence and holographic particle calibration.
 2. **`/onboarding`** — Multi-step 3D slide deck detailing sub-3s extraction, 4K resolution, lossless audio, and universal compatibility.
 3. **`/welcome`** — Spatial landing showcase with capability badges and direct launch trigger.
 4. **`/` (Main Deck)** — The core downloader deck: instant URL extraction, clipboard paste listener, 3-second auto-download countdown, and high-quality format matrix (4K, 1080p, 720p, 320kbps MP3 audio, and lossless photo captures).

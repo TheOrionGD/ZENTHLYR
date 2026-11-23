@@ -14,7 +14,7 @@ from extractors import extract_media_info, PLATFORM_SIGNATURES
 
 app = FastAPI(
     title="ZENTHLYR Spatial Core API",
-    description="visionOS High-Fidelity Universal Media Extraction Engine",
+    description="Spatial UI High-Fidelity Universal Media Extraction Engine",
     version="1.0.0"
 )
 
@@ -40,7 +40,7 @@ async def health_check():
     return {
         "status": "online",
         "system": "ZENTHLYR",
-        "engine": "visionOS Spatial Core",
+        "engine": "Spatial UI Core",
         "downloads_dir": str(ROOT_DOWNLOADS_DIR),
         "ffmpeg": bool(FFMPEG_EXE),
         "speed": "sub-3s optimized"

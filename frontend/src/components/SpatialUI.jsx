@@ -29,7 +29,7 @@ export function SpatialWindow({ children, title, subtitle, className = "" }) {
           </div>
 
           <div className="text-xs font-mono px-2.5 py-1 rounded-full bg-[var(--card-glass)] border border-[var(--border-glass)] text-[var(--text-muted)]">
-            visionOS 2.0
+            Spatial UI 2.0
           </div>
         </div>
 

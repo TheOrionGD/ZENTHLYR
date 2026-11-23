@@ -55,7 +55,7 @@ export default function DownloadsVaultPage() {
     <div className="w-full flex flex-col items-center justify-start pb-24">
       <SpatialWindow
         title="Downloaded Assets Vault"
-        subtitle="Live visionOS spatial preview for all media downloaded directly to the root /downloads folder"
+        subtitle="Live spatial preview for all media downloaded directly to the root /downloads folder"
       >
         {/* Controls Bar with SmoothTabs */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[var(--border-glass)]">
