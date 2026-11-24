@@ -80,10 +80,10 @@ export function SpatialOrnament() {
           whileHover={{ scale: 1.12, rotate: 15 }}
           whileTap={{ scale: 0.9 }}
           onClick={toggleTheme}
-          title={theme === 'dark' ? 'Switch to Light Steel' : 'Switch to Spatial Dark'}
-          className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--card-glass)] cursor-pointer transition-colors"
+          title={theme === 'dark' ? 'Switch to Light Spatial' : 'Switch to Dark Spatial'}
+          className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full text-[#AEB5BB] hover:text-[#F4F5F6] hover:bg-[var(--card-glass)] cursor-pointer transition-colors"
         >
-          {theme === 'dark' ? <Sun className="w-5 h-5 text-[#f8f9fa]" /> : <Moon className="w-5 h-5 text-[#343a40]" />}
+          {theme === 'dark' ? <Sun className="w-5 h-5 text-[#F4F5F6]" /> : <Moon className="w-5 h-5 text-[#AEB5BB]" />}
         </motion.button>
       </motion.nav>
     </div>

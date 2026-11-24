@@ -31,21 +31,22 @@ export default function SmoothButton({
     icon: "w-10 h-10 p-0 text-sm"
   }[size] || "px-5 py-2.5 text-sm gap-2";
 
-  // Style Variants matching SmoothUI & visionOS light steel aesthetic
+  // Style Variants matching exact monochromatic palette:
+  // Deep charcoal: #31373D, Graphite: #4F5459, Steel grey: #70777E, Silver grey: #AEB5BB, Mist grey: #D9DDE0, Soft white: #F4F5F6
   let variantClasses = "";
   if (variant === 'candy') {
-    // SmoothUI signature Candy variant with multi-layered specular gradient & 3D bevel glow
-    variantClasses = "bg-gradient-to-b from-[#ffffff] via-[#e9ecef] to-[#ced4da] text-[#212529] font-bold shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),0_2px_0_0_rgba(255,255,255,0.9)_inset,0_-2px_0_0_rgba(0,0,0,0.15)_inset] border border-white/60";
+    // Spatial Candy variant with pure liquid silver specular reflection & 3D bevel
+    variantClasses = "bg-gradient-to-b from-[#F4F5F6] via-[#D9DDE0] to-[#AEB5BB] text-[#31373D] font-bold shadow-[0_12px_28px_-6px_rgba(0,0,0,0.45),0_2px_0_0_rgba(255,255,255,0.9)_inset,0_-2px_0_0_rgba(49,55,61,0.25)_inset] border border-white/70";
   } else if (variant === 'solid') {
-    variantClasses = "bg-[var(--text-primary)] text-[var(--bg-spatial)] font-semibold shadow-lg shadow-black/25 hover:shadow-black/40 border border-white/20";
+    variantClasses = "bg-[#F4F5F6] text-[#31373D] font-bold shadow-lg shadow-black/35 hover:bg-[#D9DDE0] border border-white/40";
   } else if (variant === 'soft') {
-    variantClasses = "bg-[var(--card-glass)] text-[var(--text-primary)] border border-[var(--border-glass)] backdrop-blur-xl shadow-sm hover:bg-[var(--border-glass)]";
+    variantClasses = "bg-[var(--card-glass)] text-[#F4F5F6] border border-[var(--border-glass)] backdrop-blur-xl shadow-sm hover:bg-[var(--border-glass)] hover:text-white";
   } else if (variant === 'outline') {
-    variantClasses = "bg-transparent text-[var(--text-primary)] border border-[var(--border-glass)] hover:border-[var(--text-primary)] hover:bg-[var(--card-glass)]";
+    variantClasses = "bg-transparent text-[#F4F5F6] border border-[var(--border-glass)] hover:border-[#D9DDE0] hover:bg-[var(--card-glass)]";
   } else if (variant === 'ghost') {
-    variantClasses = "bg-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--card-glass)]";
+    variantClasses = "bg-transparent text-[#AEB5BB] hover:text-[#F4F5F6] hover:bg-[var(--card-glass)]";
   } else if (variant === 'link') {
-    variantClasses = "bg-transparent text-[var(--text-primary)] underline-offset-4 hover:underline p-0";
+    variantClasses = "bg-transparent text-[#D9DDE0] underline-offset-4 hover:underline p-0";
   }
 
   // SmoothUI Motion animation spring configuration

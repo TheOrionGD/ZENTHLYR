@@ -44,19 +44,20 @@ export default function SpatialParticles() {
         // Position ratio across horizontal screen: 0.0 (far left) to 1.0 (far right)
         const t = Math.max(0, Math.min(1, p.x / canvas.width));
 
-        // Dark on Left Panel -> Gunmetal / Shadow Grey (#212529, #343a40)
-        // Bright on Right Panel -> Bright Snow / Platinum (#f8f9fa, #e9ecef)
-        const r = Math.round(33 + t * (248 - 33));
-        const g = Math.round(37 + t * (249 - 37));
-        const b = Math.round(41 + t * (250 - 41));
-        const alpha = 0.25 + t * 0.45; // slightly higher luminosity on the right
+        // Exact Monochromatic Palette Interpolation:
+        // Left: Deep Charcoal (#31373D: 49, 55, 61) / Graphite (#4F5459: 79, 84, 89)
+        // Right: Mist Grey (#D9DDE0: 217, 221, 224) / Soft White (#F4F5F6: 244, 245, 246)
+        const r = Math.round(49 + t * (244 - 49));
+        const g = Math.round(55 + t * (245 - 55));
+        const b = Math.round(61 + t * (246 - 61));
+        const alpha = 0.3 + t * 0.45; // subtle luminescence on the right
 
         const currentRadius = p.radius + Math.sin(p.pulse) * 0.7;
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-        ctx.shadowBlur = 8 + t * 10;
+        ctx.shadowBlur = 6 + t * 12;
         ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${alpha * 0.8})`;
         ctx.fill();
       }

@@ -1,5 +1,6 @@
 import os
 import re
+import asyncio
 import urllib.parse
 from pathlib import Path
 from fastapi import FastAPI, Query, HTTPException
@@ -35,6 +36,27 @@ app.add_middleware(
 class AnalyzeRequest(BaseModel):
     url: str
 
+class BatchAnalyzeRequest(BaseModel):
+    urls: list[str]
+
+@app.post("/api/batch-analyze")
+async def batch_analyze_urls(req: BatchAnalyzeRequest):
+    if not req.urls:
+        raise HTTPException(status_code=400, detail="URLs list cannot be empty")
+    
+    clean_urls = [u.strip() for u in req.urls if u and u.strip()][:10]
+    tasks = [extract_media_info(u) for u in clean_urls]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    processed = []
+    for u, res in zip(clean_urls, results):
+        if isinstance(res, Exception):
+            processed.append({"url": u, "status": "error", "message": str(res)})
+        else:
+            processed.append(res)
+            
+    return {"results": processed, "total": len(processed)}
+
 @app.get("/api/health")
 async def health_check():
     return {
@@ -61,6 +83,41 @@ async def analyze_url(req: AnalyzeRequest):
     url = req.url.strip()
     result = await extract_media_info(url)
     return result
+
+@app.get("/api/vault/stats")
+async def get_vault_statistics():
+    total_bytes = 0
+    file_count = 0
+    type_counts = {"video": 0, "audio": 0, "image": 0}
+    
+    if ROOT_DOWNLOADS_DIR.exists():
+        for f in ROOT_DOWNLOADS_DIR.glob("*"):
+            if f.is_file() and f.name != ".gitkeep":
+                total_bytes += f.stat().st_size
+                file_count += 1
+                ext = f.suffix.lower().replace('.', '')
+                if ext in ['mp4', 'webm', 'mov', 'mkv']:
+                    type_counts["video"] += 1
+                elif ext in ['mp3', 'm4a', 'wav', 'ogg']:
+                    type_counts["audio"] += 1
+                else:
+                    type_counts["image"] += 1
+                    
+    return {
+        "total_files": file_count,
+        "total_bytes": total_bytes,
+        "type_counts": type_counts,
+        "vault_path": str(ROOT_DOWNLOADS_DIR)
+    }
+
+@app.delete("/api/vault/delete")
+async def delete_vault_file(filename: str = Query(...)):
+    safe_filename = re.sub(r'[^a-zA-Z0-9_\-\.]', '_', filename)
+    target_filepath = ROOT_DOWNLOADS_DIR / safe_filename
+    if target_filepath.exists() and target_filepath.is_file():
+        target_filepath.unlink()
+        return {"status": "success", "message": f"Deleted {safe_filename}"}
+    raise HTTPException(status_code=404, detail="File not found in vault")
 
 @app.get("/api/downloads-list")
 async def list_downloaded_assets():

@@ -55,7 +55,7 @@ export default function DownloadsVaultPage() {
     <div className="w-full flex flex-col items-center justify-start pb-24">
       <SpatialWindow
         title="Downloaded Assets Vault"
-        subtitle="Live spatial preview for all media downloaded directly to the root /downloads folder"
+        subtitle="Live spatial preview for all media downloaded directly to the root /vault folder"
       >
         {/* Controls Bar with SmoothTabs */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[var(--border-glass)]">
@@ -160,7 +160,7 @@ export default function DownloadsVaultPage() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredAssets.map((asset, index) => {
               const isVid = asset.type === 'video';
               const isAud = asset.type === 'audio';
@@ -169,40 +169,41 @@ export default function DownloadsVaultPage() {
               return (
                 <div
                   key={index}
-                  className="vision-card rounded-2xl p-4 border border-[var(--border-glass)] flex flex-col justify-between hover:border-[var(--text-primary)]/40 transition-all"
+                  className="vision-card rounded-3xl p-5 border border-[var(--border-glass)] flex flex-col justify-between hover:border-[#F4F5F6]/40 transition-all shadow-lg hover:-translate-y-1"
                 >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl vision-card flex items-center justify-center flex-shrink-0 text-[var(--text-primary)] border border-[var(--border-glass)]">
-                      {isVid && <Play className="w-4 h-4" />}
-                      {isAud && <Music className="w-4 h-4" />}
-                      {isImg && <ImageIcon className="w-4 h-4" />}
+                  <div className="flex items-start gap-3.5 mb-4">
+                    <div className="w-11 h-11 rounded-2xl vision-card flex items-center justify-center flex-shrink-0 text-[#F4F5F6] border border-[var(--border-glass)] shadow-md">
+                      {isVid && <Play className="w-5 h-5" />}
+                      {isAud && <Music className="w-5 h-5" />}
+                      {isImg && <ImageIcon className="w-5 h-5" />}
                     </div>
 
                     <div className="flex-1 overflow-hidden">
-                      <h4 className="text-xs sm:text-sm font-bold text-[var(--text-primary)] truncate" title={asset.name}>
+                      <h4 className="text-sm font-bold text-[#F4F5F6] truncate mb-1" title={asset.name}>
                         {asset.name}
                       </h4>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[var(--window-glass)] border border-[var(--border-glass)] text-[var(--text-muted)]">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[var(--window-glass)] border border-[var(--border-glass)] text-[#AEB5BB]">
                           {asset.ext}
                         </span>
-                        <span className="text-[10px] font-mono text-[var(--text-muted)]">
+                        <span className="text-[11px] font-mono text-[#AEB5BB]">
                           {formatSize(asset.size_bytes)}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-2.5 border-t border-[var(--border-glass)]">
-                    <span className="text-[10px] font-mono text-[var(--text-muted)]">
-                      Saved in /downloads
+                  <div className="flex items-center justify-between pt-3 border-t border-[var(--border-glass)]">
+                    <span className="text-[10px] font-mono text-[#70777E]">
+                      Saved in /vault
                     </span>
 
                     <SmoothButton
                       variant="candy"
-                      size="xs"
+                      size="sm"
                       onClick={() => setActiveMedia(asset)}
-                      icon={<Eye className="w-3.5 h-3.5" />}
+                      icon={<Eye className="w-4 h-4" />}
+                      className="py-1.5 px-4 text-xs font-semibold"
                     >
                       Preview
                     </SmoothButton>
