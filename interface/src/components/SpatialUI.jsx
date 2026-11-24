@@ -36,12 +36,12 @@ export function SpatialWindow({ children, title, subtitle, className = "" }) {
         {(title || subtitle) && (
           <div className="mb-8 text-left">
             {title && (
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#F4F5F6] mb-2 font-mono">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#F4F5F6] spatial-section-header mb-2 font-mono">
                 {title}
               </h1>
             )}
             {subtitle && (
-              <p className="text-sm sm:text-base text-[#AEB5BB] max-w-3xl leading-relaxed">
+              <p className="text-sm sm:text-base text-[#D9DDE0] spatial-section-desc max-w-3xl leading-relaxed">
                 {subtitle}
               </p>
             )}

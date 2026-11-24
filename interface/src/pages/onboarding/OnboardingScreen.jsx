@@ -77,10 +77,10 @@ export default function OnboardingScreen() {
               <Icon className="w-10 h-10 text-[var(--text-primary)]" />
             </div>
 
-            <h2 className="text-3xl font-extrabold text-[var(--text-primary)] tracking-tight mb-3">
+            <h2 className="text-3xl font-extrabold text-[#F4F5F6] spatial-section-header tracking-tight mb-3">
               {slide.title}
             </h2>
-            <p className="text-sm sm:text-base text-[var(--text-muted)] max-w-sm mb-10 leading-relaxed">
+            <p className="text-sm sm:text-base text-[#D9DDE0] spatial-section-desc max-w-sm mb-10 leading-relaxed font-normal">
               {slide.subtitle}
             </p>
           </motion.div>

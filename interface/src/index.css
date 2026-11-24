@@ -11,30 +11,30 @@
     --soft-white: #F4F5F6;
 
     --bg-spatial: #31373D;
-    --window-glass: rgba(49, 55, 61, 0.72);
-    --card-glass: rgba(79, 84, 89, 0.55);
+    --window-glass: rgba(49, 55, 61, 0.78);
+    --card-glass: rgba(79, 84, 89, 0.62);
     --border-glass: rgba(174, 181, 187, 0.28);
     --specular: rgba(244, 245, 246, 0.45);
     --text-primary: #F4F5F6;
-    --text-secondary: #D9DDE0;
-    --text-muted: #AEB5BB;
-    --ornament-glass: rgba(49, 55, 61, 0.82);
+    --text-secondary: #E2E6E9;
+    --text-muted: #CBD1D6;
+    --ornament-glass: rgba(49, 55, 61, 0.88);
     --ornament-border: rgba(174, 181, 187, 0.35);
-    --glow-highlight: rgba(217, 221, 224, 0.14);
+    --glow-highlight: rgba(217, 221, 224, 0.16);
   }
 
   .dark {
     --bg-spatial: #1E2226;
-    --window-glass: rgba(30, 34, 38, 0.82);
-    --card-glass: rgba(49, 55, 61, 0.65);
-    --border-glass: rgba(112, 119, 126, 0.32);
-    --specular: rgba(217, 221, 224, 0.25);
+    --window-glass: rgba(30, 34, 38, 0.85);
+    --card-glass: rgba(49, 55, 61, 0.70);
+    --border-glass: rgba(112, 119, 126, 0.35);
+    --specular: rgba(217, 221, 224, 0.30);
     --text-primary: #F4F5F6;
-    --text-secondary: #D9DDE0;
-    --text-muted: #AEB5BB;
-    --ornament-glass: rgba(30, 34, 38, 0.88);
-    --ornament-border: rgba(112, 119, 126, 0.38);
-    --glow-highlight: rgba(174, 181, 187, 0.12);
+    --text-secondary: #E2E6E9;
+    --text-muted: #CBD1D6;
+    --ornament-glass: rgba(30, 34, 38, 0.92);
+    --ornament-border: rgba(112, 119, 126, 0.42);
+    --glow-highlight: rgba(174, 181, 187, 0.15);
   }
 }
 
@@ -126,13 +126,35 @@ body {
   z-index: 0;
   pointer-events: none;
   background-image: 
-    radial-gradient(circle at 50% 20%, rgba(206, 212, 218, 0.08) 0%, transparent 65%),
+    radial-gradient(circle at 50% 25%, rgba(49, 55, 61, 0.45) 0%, rgba(24, 28, 32, 0.82) 75%),
+    radial-gradient(circle at 75% 30%, rgba(244, 245, 246, 0.06) 0%, transparent 60%),
     url('/vision-environment.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* Dark color underlay vignette ensures pulling/overscrolling reveals solid dark aesthetics */
-  box-shadow: inset 0 0 160px 40px rgba(18, 21, 24, 0.95);
+  /* Dark color underlay vignette ensures high contrast readability for all uncarded text */
+  box-shadow: inset 0 0 180px 60px rgba(18, 21, 24, 0.96);
+}
+
+/* Text glow & readability helper classes against spatial environment */
+.spatial-hero-title {
+  color: #F4F5F6;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.spatial-hero-subtitle {
+  color: #D9DDE0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.95);
+}
+
+.spatial-section-header {
+  color: #F4F5F6;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.75);
+}
+
+.spatial-section-desc {
+  color: #D9DDE0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
 /* Apple Vision Pro Spatial Glass Physics & Specular Lighting */

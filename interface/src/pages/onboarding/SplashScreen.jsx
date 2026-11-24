@@ -39,16 +39,16 @@ export default function SplashScreen() {
             />
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[var(--text-primary)] mb-2 font-mono">
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#F4F5F6] spatial-hero-title mb-2 font-mono">
             ZENTHLYR
           </h1>
-          <p className="text-sm font-medium tracking-widest uppercase text-[var(--text-muted)] mb-8">
+          <p className="text-sm font-semibold tracking-widest uppercase text-[#D9DDE0] spatial-hero-subtitle mb-8">
             Spatial UI Universal Media Intelligence
           </p>
 
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-[var(--text-primary)] animate-ping" />
-            <span className="text-xs font-mono text-[var(--text-muted)]">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#F4F5F6] animate-ping" />
+            <span className="text-xs font-mono font-medium text-[#D9DDE0]">
               Calibrating Spatial Environment...
             </span>
           </div>

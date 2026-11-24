@@ -25,6 +25,7 @@ import {
   Server
 } from 'lucide-react';
 import SmoothButton from '../../components/SmoothButton';
+import { SmoothText } from '../../components/SmoothUIPrimitives';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -73,16 +74,21 @@ export default function LandingPage() {
           className="relative z-10 max-w-4xl mx-auto flex flex-col items-center"
         >
           {/* Spatial OS Pill Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full vision-card border border-[var(--border-glass)] text-xs font-mono text-[#D9DDE0] mb-8 shadow-md">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full vision-card border border-[var(--border-glass)] text-xs font-mono text-[#F4F5F6] mb-8 shadow-md"
+          >
             <Sparkles className="w-4 h-4 text-[#F4F5F6]" />
-            <span className="tracking-wider uppercase">ZENTHLYR &bull; SPATIAL COMPUTING RELEASE 2.0</span>
-          </div>
+            <span className="tracking-wider uppercase font-semibold">ZENTHLYR &bull; SPATIAL COMPUTING RELEASE 2.0</span>
+          </motion.div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-[#F4F5F6] leading-[1.05] mb-6">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-[#F4F5F6] spatial-hero-title leading-[1.05] mb-6">
             Media, reimagined <br className="hidden sm:inline" />in space.
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-[#AEB5BB] max-w-2xl leading-relaxed mb-10 font-normal">
+          <p className="text-lg sm:text-xl md:text-2xl text-[#E2E6E9] spatial-hero-subtitle max-w-2xl leading-relaxed mb-10 font-normal">
             A cinematic spatial operating environment for capturing high-definition video, studio audio, and original photography. Engineered with authentic glass depth and sub-3-second velocity.
           </p>
 
@@ -159,17 +165,23 @@ export default function LandingPage() {
 
       {/* 2. HOW IT WORKS (SIMPLE 3-STEP EXPLANATION FOR EVERYONE) */}
       <section className="w-full py-28 px-4 sm:px-8 flex flex-col items-center border-t border-[var(--border-glass)] bg-[#31373D]/30">
-        <div className="w-[92vw] max-w-[1440px] text-center mb-16">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#AEB5BB] mb-3 block">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="w-[92vw] max-w-[1440px] text-center mb-16"
+        >
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D9DDE0] mb-3 block">
             HOW IT WORKS &bull; 3 SIMPLE STEPS
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] spatial-section-header tracking-tight mb-4">
             Effortless media capture in seconds.
           </h2>
-          <p className="text-base text-[#AEB5BB] max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-[#E2E6E9] spatial-section-desc max-w-xl mx-auto leading-relaxed">
             No complicated technical settings or software installations required. Anyone can extract high-fidelity media in three straightforward steps.
           </p>
-        </div>
+        </motion.div>
 
         <div className="w-[92vw] max-w-[1440px] grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="vision-card rounded-[36px] p-8 sm:p-10 border border-[var(--border-glass)] text-left flex flex-col justify-between">
@@ -221,15 +233,21 @@ export default function LandingPage() {
 
       {/* 3. CINEMATIC 21:9 WIDE STORYTELLING SECTION */}
       <section className="w-full py-28 px-4 sm:px-8 flex flex-col items-center">
-        <div className="w-[92vw] max-w-[1440px] flex flex-col lg:flex-row items-center justify-between gap-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="w-[92vw] max-w-[1440px] flex flex-col lg:flex-row items-center justify-between gap-14"
+        >
           <div className="max-w-xl text-left">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#AEB5BB] mb-3 block">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D9DDE0] mb-3 block">
               ENGINEERED FOR SPATIAL COMPUTING
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] tracking-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] spatial-section-header tracking-tight mb-6">
               A high-precision system built for humans.
             </h2>
-            <p className="text-base text-[#AEB5BB] leading-relaxed mb-8">
+            <p className="text-base sm:text-lg text-[#E2E6E9] spatial-section-desc leading-relaxed mb-8">
               Traditional web downloaders are cluttered with intrusive ads, broken redirects, and low-resolution 360p caps. ZENTHLYR was engineered from the ground up to feel like an authentic spatial operating system: minimal, expansive, mathematically precise, and privacy-first.
             </p>
             
@@ -308,22 +326,28 @@ export default function LandingPage() {
               <span className="text-emerald-400">100% OPERATIONAL</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 4. FREQUENTLY ASKED QUESTIONS (ACCESSIBLE TO NORMAL USERS) */}
       <section className="w-full py-28 px-4 sm:px-8 flex flex-col items-center border-t border-[var(--border-glass)] bg-[#31373D]/20">
-        <div className="w-[92vw] max-w-[1440px] text-center mb-16">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#AEB5BB] mb-3 block">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="w-[92vw] max-w-[1440px] text-center mb-16"
+        >
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D9DDE0] mb-3 block">
             CLEAR ANSWERS &bull; FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-[#F4F5F6] spatial-section-header tracking-tight mb-4">
             Everything you need to know.
           </h2>
-          <p className="text-base text-[#AEB5BB] max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-[#E2E6E9] spatial-section-desc max-w-xl mx-auto leading-relaxed">
             Common questions answered plainly and simply. No jargon, just clear information on how the system works.
           </p>
-        </div>
+        </motion.div>
 
         <div className="w-[92vw] max-w-4xl space-y-4 text-left">
           {FAQS.map((faq, index) => {
