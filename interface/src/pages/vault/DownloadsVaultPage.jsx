@@ -11,6 +11,7 @@ import {
 import { SpatialWindow } from '../../components/SpatialUI';
 import SmoothButton from '../../components/SmoothButton';
 import { SmoothTabs, SmoothBadge } from '../../components/SmoothUIPrimitives';
+import { getApiUrl, getAssetUrl } from '../../utils/api';
 
 export default function DownloadsVaultPage() {
   const [assets, setAssets] = useState([]);
@@ -21,7 +22,7 @@ export default function DownloadsVaultPage() {
   const fetchDownloadedAssets = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/downloads-list');
+      const res = await fetch(getApiUrl('/api/downloads-list'));
       const data = await res.json();
       setAssets(data.files || []);
     } catch {
@@ -115,7 +116,7 @@ export default function DownloadsVaultPage() {
               <div className="rounded-2xl overflow-hidden bg-black/40 border border-[var(--border-glass)] flex items-center justify-center p-2">
                 {activeMedia.type === 'video' && (
                   <video
-                    src={activeMedia.preview_url}
+                    src={getAssetUrl(activeMedia.name)}
                     controls
                     autoPlay
                     className="w-full max-h-[360px] rounded-xl object-contain"
@@ -138,7 +139,7 @@ export default function DownloadsVaultPage() {
 
                 {activeMedia.type === 'image' && (
                   <img
-                    src={activeMedia.preview_url}
+                    src={getAssetUrl(activeMedia.name)}
                     alt={activeMedia.name}
                     className="max-h-[380px] rounded-xl object-contain"
                   />

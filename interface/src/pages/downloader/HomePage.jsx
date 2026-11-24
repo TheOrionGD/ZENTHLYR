@@ -24,6 +24,7 @@ import { SpatialWindow } from '../../components/SpatialUI';
 import SmoothButton from '../../components/SmoothButton';
 import { SmoothText, SmoothBadge, SmoothAlert } from '../../components/SmoothUIPrimitives';
 import { useApp } from '../../context/AppContext';
+import { getApiUrl } from '../../utils/api';
 
 export default function HomePage() {
   const [urlInput, setUrlInput] = useState('');
@@ -59,7 +60,7 @@ export default function HomePage() {
     setBatchResults([]);
 
     try {
-      const response = await fetch('/api/batch-analyze', {
+      const response = await fetch(getApiUrl('/api/batch-analyze'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ urls: rawLines })
@@ -89,7 +90,7 @@ export default function HomePage() {
     setAutoCountdown(null);
 
     try {
-      const response = await fetch('/api/analyze', {
+      const response = await fetch(getApiUrl('/api/analyze'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: targetUrl.trim() })
@@ -139,7 +140,7 @@ export default function HomePage() {
     const downloadFilename = `${safeTitle}.${fmt.ext}`;
 
     // Pass the format target url, filename, AND original webpage url so backend can mux with FFMPEG
-    const downloadEndpoint = `/api/download?url=${encodeURIComponent(fmt.url)}&filename=${encodeURIComponent(downloadFilename)}&source_url=${encodeURIComponent(currentMedia.url)}&format_id=${encodeURIComponent(fmt.id || '')}`;
+    const downloadEndpoint = getApiUrl(`/api/download?url=${encodeURIComponent(fmt.url)}&filename=${encodeURIComponent(downloadFilename)}&source_url=${encodeURIComponent(currentMedia.url)}&format_id=${encodeURIComponent(fmt.id || '')}`);
     
     // Create direct anchor trigger
     const link = document.createElement('a');
